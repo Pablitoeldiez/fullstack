@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-content>
+    <form (submit)="action()" [formGroup]="formProduct">
+      <mat-form-field>
+        <mat-label>name</mat-label>
+        <input matInput formControlName="name" class="form-control" type="text" name="name">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option *ngFor="let c of categories" [value]="c">
+            {{c.description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>description</mat-label>
+        <input matInput formControlName="description" class="form-control" type="text" name="description">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>$ price</mat-label>
+        <input matInput formControlName="price" class="form-control" type="text" name="price">
+      </mat-form-field>
+      <br>
+      <mat-slide-toggle class="example-margin" name="isActive" formControlName="isActive" [color]="color"
+        [disabled]="disabled">
+        ACTIVE
+      </mat-slide-toggle>
+      <br>
+      <br>
+      <input class="btn btn-primary" value="Create" type="submit">
+    </form>
+  </mat-card-content>
+
+</mat-card>

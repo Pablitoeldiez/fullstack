@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <strong>
+      <p>Edit Product</p>
+    </strong>
+    <div class="col-4 formGroup">
+      <form [formGroup]="formProduct" *ngIf="formProduct">
+        <input class="form-control" formControlName="id" type="hidden">
+        <input class="form-control" formControlName="nameP" type="text" placeholder="Product">
+        <br>
+        <input class="form-control" formControlName="description" type="text" placeholder="Description">
+        <br>
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <input class="form-control" formControlName="price" type="text" placeholder="Price">
+        </div>
+        <br>
+        <input class="btn btn-success" value="Update" (click)="update()">
+      </form>
+    </div>
+
+  </div>
+</div>
+
